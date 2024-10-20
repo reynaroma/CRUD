@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         const books = await Book.find();
         res.status(200).json({ success: true, data: books });
       } catch (error) {
-        res.status(400).json({ success: false, error });
+        res.status(400).json({ success: false, error: error.message });
       }
       break;
     case "POST":
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         const book = await Book.create(req.body);
         res.status(201).json({ success: true, data: book})
       } catch (error) {
-        res.status(400).json({ success: false, error });
+        res.status(400).json({ success: false, error: error.message });
       }
       break;
     default:
