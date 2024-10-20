@@ -8,3 +8,4 @@ if(!MONGODB_URL) { // Check if MONGODB_URL is defined
   )
 };
 
+let cached = global.mongoosel;
