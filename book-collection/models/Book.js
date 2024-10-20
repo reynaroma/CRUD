@@ -14,4 +14,4 @@ const BookSchema = new mongoose.Schema({
   }
 });
 
-export default mongoose.model("Book", BookSchema);
+export default mongoose.model("Book", BookSchema); // the mongoose.model, to avoid error in runtime
