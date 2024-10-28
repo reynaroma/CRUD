@@ -6,6 +6,12 @@ export default function Home() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
-  
-  return ();
+
+  // create a function to call the api routes
+  const fetchBooks = async () => {
+    const response = await axios.get("/api/books");
+  }
+  return (
+
+  );
 }
