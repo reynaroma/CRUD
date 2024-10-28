@@ -15,6 +15,14 @@ export default function Home() {
   const fetchBooks = async () => {
     const response = await axios.get("/api/books");
     setBooks(response.data.data);
+  };
+
+  const addBook = async () => {
+    const response = await axios.post("/api/books", {title, author, description});
+    fetchBooks(); // fetch the books after adding the new book
+    setTitle(""); // clear the form after adding the new book
+    setAuthor(""); // clear the form after adding the new book
+    setDescription(""); // clear the form after adding the new book
   }
   return (
 
