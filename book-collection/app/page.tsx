@@ -7,6 +7,10 @@ export default function Home() {
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
 
+  useEffect(() => { 
+    fetchBooks();
+  }, []);
+
   // create a function to call the api routes
   const fetchBooks = async () => {
     const response = await axios.get("/api/books");
