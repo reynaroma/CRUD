@@ -10,6 +10,7 @@ export default function Home() {
   // create a function to call the api routes
   const fetchBooks = async () => {
     const response = await axios.get("/api/books");
+    setBooks(response.data.data);
   }
   return (
 
