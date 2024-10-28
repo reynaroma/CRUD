@@ -23,7 +23,13 @@ export default function Home() {
     setTitle(""); // clear the form after adding the new book
     setAuthor(""); // clear the form after adding the new book
     setDescription(""); // clear the form after adding the new book
-  }
+  };
+
+  const deleteBook = async (id) => {
+    await axios.delete(`/api/books/${id}`);
+    fetchBooks(); // fetch the books after deleting the book
+  };
+
   return (
 
   );
