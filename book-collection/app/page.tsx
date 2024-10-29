@@ -63,8 +63,29 @@ export default function Home() {
           onClick={addBook}>
           Add book</button>
       </div>
-      <div>
-        
+      <div className="grid grid-cols-1 gap-6">
+        {books.map((book) => (
+          <div
+            key={book._id}
+            className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold">{book.title}</h2>
+            <p className="text-gray-700 mb-2">{book.author}</p>
+            <p className="text-gray-500">{book.description}</p>
+            <div className="mt-4 flex space-x-2">
+              <button
+                className="bg-red-500 text-white p-2 rounded"
+                onClick={() => deleteBook(book._id)}>Delete</button>
+              <button
+                className="bg-yellow-500 text-white p-2 rounded"
+                onClick={() => updateBook(
+                  book._id,
+                  prompt('New Title: ', book.title),
+                  prompt('New Author: ', book.author),
+                  prompt('New Description: ', book.description),
+                )}>Update</button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
