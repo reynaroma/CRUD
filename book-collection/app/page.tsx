@@ -31,12 +31,14 @@ export default function Home() {
     fetchBooks(); // fetch the books after deleting the book
   };
 
-  const updateBook = async (id, newTitle, newAuthor, newDescriptiopn) => {
-    await axios.put(`/api/books/${id}`, { title: newTitle, author: newAuthor, description: newDescriptiopn });
+  const updateBook = async (id, newTitle, newAuthor, newDescription) => {
+    await axios.put(`/api/books/${id}`, { title: newTitle, author: newAuthor, description: newDescription });
     fetchBooks();
   };
 
   return (
-    <div>hello world</div>
+    <div className="min-h-screen bg-gray-100 p-8">
+      <h1 className="text-4xl font-bold text-center mb-8">Book Collection</h1>
+    </div>
   );
 }
