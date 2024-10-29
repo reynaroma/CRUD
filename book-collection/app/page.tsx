@@ -44,17 +44,27 @@ export default function Home() {
           className="w-full p-2 mb-2 border border-gray-300 rounded"
           placeholder="Title"
           value={title}
-          onChange={(e) => setTitle(e.target.value)} />
+          onChange={(e) => setTitle(e.target.value)}
+        />
         <input
           className="w-full p-2 mb-2 border border-gray-300 rounded"
           placeholder="Author"
           value={author}
-          onChange={(e) => setAuthor(e.target.value)} />
+          onChange={(e) => setAuthor(e.target.value)}
+        />
         <textarea
           className="w-full p-2 mb-2 border border-gray-300 rounded"
           placeholder="Description"
           value={description}
-          onChange={(e) => setDescription(e.target.value)} />
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <button
+          className="w-full bg-blue-500 text-white p-2 rounded"
+          onClick={addBook}>
+          Add book</button>
+      </div>
+      <div>
+        
       </div>
     </div>
   );
