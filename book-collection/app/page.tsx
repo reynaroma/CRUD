@@ -7,7 +7,7 @@ export default function Home() {
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
 
-  useEffect(() => { 
+  useEffect(() => {
     fetchBooks();
   }, []);
 
@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   const addBook = async () => {
-    const response = await axios.post("/api/books", {title, author, description});
+    const response = await axios.post("/api/books", { title, author, description });
     fetchBooks(); // fetch the books after adding the new book
     setTitle(""); // clear the form after adding the new book
     setAuthor(""); // clear the form after adding the new book
@@ -28,6 +28,11 @@ export default function Home() {
   const deleteBook = async (id) => {
     await axios.delete(`/api/books/${id}`);
     fetchBooks(); // fetch the books after deleting the book
+  };
+
+  const updateBook = async (id, newTitle, newAuthor, newDescriptiopn) => {
+    await axios.put(`/api/books/${id}`, { title: newTitle, author: newAuthor, description: newDescriptiopn });
+    fetchBooks();
   };
 
   return (
