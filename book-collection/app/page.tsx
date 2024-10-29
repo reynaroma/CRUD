@@ -37,7 +37,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-100 text-black p-8">
       <h1 className="text-4xl font-bold text-center mb-8">Book Collection</h1>
       <div className="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto mb-8">
         <input
@@ -45,6 +45,16 @@ export default function Home() {
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
+        <input
+          className="w-full p-2 mb-2 border border-gray-300 rounded"
+          placeholder="Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)} />
+        <textarea
+          className="w-full p-2 mb-2 border border-gray-300 rounded"
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)} />
       </div>
     </div>
   );
